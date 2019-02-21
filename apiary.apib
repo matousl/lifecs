@@ -35,8 +35,7 @@ Rozhraní pro získávání informací o **druzích a biotopech na lokalitách l
 ### Přehled [GET]
 
 + Response 200 (application/json)
-    + Attributes (array[Ciselnik])
-    + Attributes (array[Ciselnik])
+    + Attributes (Ciselnik)
 
 ## Změny [/zmeny/?f={f}]
 
@@ -68,6 +67,9 @@ Rozhraní pro získávání informací o **druzích a biotopech na lokalitách l
     + (Druh)
 
 ##Ciselnik
++ Lokality (array) 
+    + (CisLokalita)
+    + (CisLokalita)
 + Biotopy (array)
     + (CisBiotop)
     + (CisBiotop)
@@ -105,15 +107,14 @@ Rozhraní pro získávání informací o **druzích a biotopech na lokalitách l
 + DruhNazevCz: ropucha obecná (string, optional) - Český název druhu
 + DruhNazevLat: Bufo bufo (string) - Latinský název druhu 
 + OchranaKat: Ohrožený (string) - Kategorie 
-+ Smernice: null (string) -  
++ Smernice: null (string) -  směrnice
 
 ##CisLokalita
-
-+ LokalitaId: 1 (number)- id lokality - cizí klíč do tabulek Druh a Biotop
-+ LokalitaKat NK (string) - Kategorie 
-    + NK 
-    + EVL
-+ LokalitaNazev Líska (string) 
++ LokalitaId: 1 (number)- id lokality - k provázání přes idLokality v druzích a biotopech
++ LokalitaKat: NK (enum [string]) - Kategorie lokality
+    + NK - Nášlapný kámen
+    + EVL - Evropsky významná lokalita
++ LokalitaNazev: Líska (string) - Název lokality
 
 ##Zmena
 + Agenda: data (enum [string]) - kategorie chráněného území
